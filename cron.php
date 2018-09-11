@@ -10,7 +10,7 @@
             'errmsg' => $errmsg,
             'filename' => $filename,
             'linenum' => $linenum,
-        ]));
+        ]), FILE_APPEND);
     });
 
     require(__DIR__ . '/src/config/config.php');
@@ -63,5 +63,10 @@
             sendMessage(MAIL_TO, $subject, $message);
         }
     } catch (Exception $exp) {
-        echo $exp;
+        file_put_contents('log.log', json_encode([
+            'errno' => $exp->getCode(),
+            'errmsg' => $exp->getMessage(),
+            'filename' => $exp->getFile(),
+            'linenum' => $exp->getLine()
+        ]), FILE_APPEND);
     }

@@ -72,10 +72,3 @@
 
         return $Mailer->Send();
     }
-
-    /**
-     * @param $message
-     */
-    function logger($message) {
-        file_put_contents('log.php', $message . "\n", FILE_APPEND);
-    }
