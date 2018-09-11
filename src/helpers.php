@@ -62,7 +62,7 @@
         $Mailer->Password = SMTP_PASSWORD;
         $Mailer->SMTPSecure = SMTP_SECURE;
         $Mailer->isHTML(true);
-        $Mailer->SMTPDebug = 2;
+        $Mailer->SMTPDebug = SMTP_DEBUG_LEVEL;
 
         $Mailer->SetFrom(SMTP_LOGIN);
         $Mailer->AddAddress($to);

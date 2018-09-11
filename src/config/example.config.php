@@ -8,6 +8,7 @@
     define('SEND_RESULT_TO_EMAIL', true);
 
     // Данные для отправки email сообщения
+    define('SMTP_DEBUG_LEVEL', 0);
     define('SMTP_HOST', 'smtp.gmail.com');
     define('SMTP_PORT', 465);
     define('SMTP_SECURE', 'ssl');
